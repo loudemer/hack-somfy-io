@@ -24,7 +24,7 @@ Il y a alors 2 problèmes à résoudre :
 L'alimentation de la télécommande se fait par le Wemo car la consommation est très basse. Il ne faut donc pas de pile dans la télécommande.
 
 ## Réalisation
-Le montage du wemo et de son interface avec les transistors se fait au mieux sur un circuit imprimé. Un PCB est fourni en exemple pour sa réalisation. 
+Le montage du wemo et de son interface avec les transistors se fait au mieux sur un circuit imprimé. Un PCB est fourni en exemple pour sa réalisation. (format pdf dans le dossier PCB)
 Les composants sont :
 1. 3 transistors NPN S8050 ou BC547
 2. 4 résistances 1/4 w 10K
