@@ -19,7 +19,7 @@ Il y a alors 2 problèmes à résoudre :
  1. lorsqu'on utilise les boutons de la télécommande, on met a la masse l'output du GPIO du Wemo, ce qui peut l'endommager. Il faut donc isoler la sortie du wemo en interposant un transistor selon le schéma suivant (une diode ne fonctionne pas).
  2. HA doit être informé de l'appui du bouton lorsqu'on utilise la télécommande, donc il faut renvoyer l'information sur 3 GPIO du wemo configurés en Input.
 
-![Icon](https://github.com/loudemer/hack-somfy-io/blob/main/Circuit/schema%20somfy%20io%20.png?raw=true)
+![Icon](https://github.com/loudemer/hack-somfy-io/blob/main/Circuit/schema%20somfy%20io.png?raw=true)
 
 L'alimentation de la télécommande se fait par le Wemo car la consommation est très basse. Il ne faut donc pas de pile dans la télécommande.
 
