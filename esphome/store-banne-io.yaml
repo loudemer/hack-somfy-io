@@ -48,9 +48,9 @@ wifi:
   password: !secret wifi_password
   ap:
     ssid: Store banne IO Fallback Hotspot
-    password: "jBtV6MR218Tz"
+    password: "xxxxxxxxx"
   manual_ip:
-    static_ip: 192.168.0.20
+    static_ip: 192.168.0.xx
     gateway: 192.168.0.1
     subnet: 255.255.255.0
 
@@ -233,7 +233,19 @@ cover:
     device_class: awning
     open_action:
       - switch.turn_on: store_banne_io_up
+      - cover.template.publish:
+          id: store_banne_ouest
+          state: OPEN
+          current_operation: OPENING
     close_action:
       - switch.turn_on: store_banne_io_down
+      - cover.template.publish:
+          id: store_banne_ouest
+          state: CLOSED
+          current_operation: CLOSING
     stop_action:
       - switch.turn_on: store_banne_io_stop
+      - cover.template.publish:
+          id: store_banne_ouest
+          state: OPEN
+          current_operation: IDLE
