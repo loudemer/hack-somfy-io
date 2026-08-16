@@ -11,6 +11,7 @@ La télécommande possède 3 boutons pour envoyer les 3 signaux : UP, MY, DOWN. 
 Il faut donc simplement mettre a la masse un des 3 anneaux pour déclencher une des commandes (UP,MY, DOWN). On peut le faire de plusieurs manières soit avec des relais commandés par HA ou plus simplement avec un circuit de type ESP32 ou Wemo D1 programmé avec ESPHome. C'est la solution proposée dans la vidéo citée précedemment qui utilise un ESP32. L'auteur a soudé un fil sur chacun des trois anneaux relié à 3 sorties GPIO de l'ESP32 et cela marche très bien. On effectue alors la commande à partir de HA.
 
 Etant prudent, je voulais pouvoir toujours utiliser la técommande au cas où il y aurait une panne sur HA. J'ai donc cherché les points correspondants aux 3 anneaux sur l'autre face du circuit imprimé pour y souder les 3 fils de commande et pouvoir ainsi garder les boutons de la técommande opérationnels.
+![Icon](https://github.com/loudemer/hack-somfy-io/blob/main/Images/cablage%20telecommande.png?raw=true)
 J'ai utilisé un Wemo D1 pour la commande, c'est largement suffisant. 
 
 Il y a alors 2 problèmes à résoudre :
