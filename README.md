@@ -10,15 +10,18 @@ La télécommande possède 3 boutons pour envoyer les 3 signaux : UP, MY, DOWN. 
 
 Il faut donc simplement mettre a la masse un des 3 anneaux pour déclencher une des commandes (UP,MY, DOWN). On peut le faire de plusieurs manières soit avec des relais commandés par HA ou plus simplement avec un circuit de type ESP32 ou Wemo D1 programmé avec ESPHome. C'est la solution proposée dans la vidéo citée précedemment qui utilise un ESP32. L'auteur a soudé un fil sur chacun des trois anneaux relié à 3 sorties GPIO de l'ESP32 et cela marche très bien. On effectue alors la commande à partir de HA.
 
-Etant prudent, je voulais pouvoir toujours utiliser la técommande au cas où il y aurait une panne sur HA. J'ai donc cherché les points correspondants aux 3 anneaux sur l'autre face du circuit imprimé pour y souder les 3 fils de commande et pouvoir ainsi garder les boutons de la técommande opérationnels.
+Etant prudent, je voulais pouvoir toujours utiliser la télécommande au cas où il y aurait une panne sur HA. J'ai donc cherché les points correspondants aux 3 anneaux sur l'autre face du circuit imprimé pour y souder les 3 fils de commande et pouvoir ainsi garder les boutons de la télécommande opérationnels.
 ![Icon](https://github.com/loudemer/hack-somfy-io/blob/main/Images/cablage%20telecommande.png?raw=true)
+
 J'ai utilisé un Wemo D1 pour la commande, c'est largement suffisant. 
 
 Il y a alors 2 problèmes à résoudre :
  1. lorsqu'on utilise les boutons de la télécommande, on met a la masse l'output du GPIO du Wemo, ce qui peut l'endommager. Il faut donc isoler la sortie du wemo en interposant un transistor selon le schéma suivant (une diode ne fonctionne pas).
  2. HA doit être informé de l'appui du bouton lorsqu'on utilise la télécommande, donc il faut renvoyer l'information sur 3 GPIO du wemo configurés en Input.
 
-L'alimentation de la télécommande se fait par le Wemo car la consommation est très basse. Il ne faut donc pas de pile dans la telecommande.
+![Icon](https://github.com/loudemer/hack-somfy-io/blob/main/Circuit/schema%20somfy%20io%20.png?raw=true)
+
+L'alimentation de la télécommande se fait par le Wemo car la consommation est très basse. Il ne faut donc pas de pile dans la télécommande.
 
 ## Réalisation
 Le montage du wemo et de son interface avec les transistors se fait au mieux sur un circuit imprimé. Un PCB est fourni en exemple pour sa réalisation. 
@@ -26,10 +29,18 @@ Les composants sont :
 1. 3 transistors NPN S8050 ou BC547
 2. 4 résistances 1/4 w 10K
 3. 1 wemo D1
+
+![Icon](https://github.com/loudemer/hack-somfy-io/blob/main/Circuit/PCB_Wemo-somfy.png?raw=true)
+
 Il faut souder 5 fils sur la télécommande +, -, UP, DOWN et MY comme indiqué sur la photo et les relier aux 5 sorties du circuit imprimé. 
 On peut mettre une prise sur le cablage pour pouvoir détacher le circuit si besoin.
+
+![Icon](https://github.com/loudemer/hack-somfy-io/blob/main/Images/Connexion%20circuit%20-%201.png?raw=true)
+
 Le circuit peut etre mis dans un boitier imprimé en 3D. Le fichier STL est joint.
 Le boitier est solidarisé au dos de la télécommande avec un adhésif double face.
+
+![Icon](https://github.com/loudemer/hack-somfy-io/blob/main/Images/fixation%20boitier%20-%201.png?raw=true)
 
 ## Intégration ESPHome
 Il faut flasher le wemo avec les paramètres suivants :
