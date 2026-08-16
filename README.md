@@ -1,4 +1,4 @@
-# Hack télécommande Somfy pure Icon
+# Hack télécommande Somfy pure IO
 
 ## Introduction
 Home Assistant ne permet pas d'émuler les télécommandes Somfy IO. La solution est de passer par des boitiers Somfy type Tahoma, connexonn io ou équivalents qui représentent un budget non négligeable mais qui restent la meilleure solution lorsque l'on a plusieurs appareils Somfy car ils permettent en outre de récupérer l'état réel de chaque appareil. 
